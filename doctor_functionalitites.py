@@ -75,17 +75,21 @@ def list_all_your_patients(doctor_id):
     print("APPOINTMENT ID | PATIENT ID | P. FIRST NAME | P. LAST NAME | P. GENDER | P. BIRTHDATE")
     for row in records:
         print(row)
-    
-    print("You can edit the diagnosis and presciption.")
-    print("Enter the 4-digit appointment ID of the medical record you want to update: ")
-    input_id = input("You: ")
 
-    print("Enter diagnosis: ")
-    input_diagnosis = input("You: ")
+    if len(records) == 0:
+        print("\nNo medical records available")
 
-    print("Enter prescription: ")
-    input_prescription = input("You: ")
+    else:     
+        print("You can edit the diagnosis and presciption.")
+        print("Enter the 4-digit appointment ID of the medical record you want to update: ")
+        input_id = input("You: ")
 
-    sql = """UPDATE medical_record SET diagnosis = %s, prescription = %s WHERE med_appointment_id = %s"""
-    values = (input_diagnosis, input_prescription, input_id)
-    database.execute_edit(sql, values)
+        print("Enter diagnosis: ")
+        input_diagnosis = input("You: ")
+
+        print("Enter prescription: ")
+        input_prescription = input("You: ")
+
+        sql = """UPDATE medical_record SET diagnosis = %s, prescription = %s WHERE med_appointment_id = %s"""
+        values = (input_diagnosis, input_prescription, input_id)
+        database.execute_edit(sql, values)

@@ -2,7 +2,7 @@ import admin_functionalities as af
 import doctor_functionalitites as df
 import patient_functionalities as pf
 
-todaysDay = 'thursday' 
+todaysDay = 'friday' 
 
 mainloop = True
 
@@ -170,7 +170,7 @@ while mainloop:
     while(role=="doctor"):
             print("\n*******************************************\n")    
             print("Hello, {}.\n".format(user_input.lower()))
-            print("Please enter your ID number (6-digit):\n")
+            print("Please enter your ID number (4-digit):\n")
             doctor_id = input("You: ")
 
             if "back" in doctor_id.lower():

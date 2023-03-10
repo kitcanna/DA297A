@@ -205,7 +205,7 @@ def view_diagnosis_prescription(patient_id):
 
     else:
         print("\n*******************************************\n")
-        print("MED.REC. ID | DIAGNOSIS | PRESCRIPTION | DATE CREATED | APPOINTMEN ID")
+        print("MED.REC. ID | DIAGNOSIS | PRESCRIPTION | DATE CREATED | APPOINTMENT ID")
         for row in med_recs: 
             print (row)
 
